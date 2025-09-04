@@ -1,0 +1,87 @@
+{
+  "height": 12,
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock#2","clock#1","clock#3","network#speed"],
+  "modules-right": ["temperature","custom/spotify","network","pulseaudio","cpu","memory","tray"],
+  "cpu": { 
+    "interval": 1, 
+    "format": " {usage}%" 
+  },
+  "memory": {
+    "interval": 3,
+    "format": " {used:0.1f}[{percentage}%] "
+  },
+ 
+  "clock#1": {
+    "format": "  {:%a}",
+    "tooltip": false
+  },
+  "clock#2": {
+    "format": "  󱑆  {:%I:%M %p}",
+     "tooltip": false
+  },
+  "clock#3": {
+     "format": "{:%d/%m}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"	
+  },    
+  "pulseaudio": {
+    "format": " 󰝚  {volume}%",
+    "on-click":"pavucontrol"
+
+  },
+  "hyprland/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "warp-on-scroll": false,
+         "format": "{name} {icon} ",
+         "format-icons": {
+             "urgent": "",
+             "active": "",
+             "default": ""
+         }
+    },
+  "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "󰤨 {essid} ({signalStrength}%)",
+        "format-ethernet": "   󰑩   ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "nm-applet toggle"
+    },
+  "tray": {
+		    "icon-size": 12,
+		    "spacing": 10
+  },
+  "temperature": {
+    "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+		"input-filename": "temp1_input",
+        "critical-threshold": 82, // takes unit: Celcius
+        "format": " {temperatureC}°C  ", // optionally, temperatureC
+        "interval": 1 // seconds between module updates
+	},
+  "network#speed": {
+       "interval": 1,
+       "format": "{ifname}",
+       "format-wifi": "  󰇚 {bandwidthDownBytes} ",
+       "format-ethernet": "  󰇚  {bandwidthDownBytes} ",
+       "format-disconnected": "󰌙",
+       "tooltip-format": "{ipaddr}",
+       "format-linked": "󰈁 {ifname} (No IP)",
+       "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+       "tooltip-format-ethernet": "{ifname} 󰌘",
+       "tooltip-format-disconnected": "󰌙 Disconnected",
+       "max-length": 30,
+       "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"]
+},
+"custom/spotify": {
+        "format": " {}",
+        "max-length": 40,
+        "interval": 30, // Remove this if your script is endless and write in loop
+        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
+        "exec-if": "pgrep spotify"
+    }
+}

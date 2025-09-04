@@ -1,0 +1,32 @@
+
+[python]
+disabled =true 
+[package]
+disabled = true
+
+# Disable Node.js version number
+[nodejs]
+disabled = true
+
+# One-line prompt
+[line_break]
+disabled = true
+
+# Disable google cloud info
+[gcloud]
+disabled = true
+
+ [character]
+ success_symbol = '[->](bold)'
+
+[time]
+disabled = false
+format = '[$time]($style)'
+time_format = '%I:%M'
+style ='#8803fc bold'
+#'bold navy'
+
+[directory]
+#linux_symbol =' '
+format = '[  ]($style) [$path]($style) '
+style = 'bold green'

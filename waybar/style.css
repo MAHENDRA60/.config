@@ -1,0 +1,89 @@
+@import url("/home/mahendra/.cache/wal/colors-waybar.css");
+
+
+* {
+	font-size: 11px;
+	font-family: Monospace Bold;
+}
+
+window#waybar {
+	background: rgba(0,0,0,0.7);
+	color: @color0;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	color: @color2;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	color: @color3;
+	background: @color4;
+}
+
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#cpu,
+#nm-applet,
+#disk,
+#tray {
+  color:@color7;
+	background:@color5; 
+}
+
+#workspaces button {
+	padding: 0 1px;
+	color: @color7;
+  background : @color12
+}
+#workspaces button.focused {
+	color: @color5;
+  background :@color12
+}
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#workspaces button:hover {
+	background: @color7;
+	border: @color13;
+	padding: 0 1px;
+}
+
+#pulseaudio {
+	color: @color7;
+  background :@color6
+}
+#memory {
+	color: @color7;
+  background:@color12
+}
+#cpu {
+	color: @color7;
+  background:@color12
+}
+#network {
+	color: @color7;
+  background:@color5
+}
+#clock {
+	color: @color7;
+  background:@color12
+}
+#temperature {
+  color: @color7;
+  background:@color9
+}
+
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#nm-applet,
+#disk {
+	padding: 0 4px;
+}
